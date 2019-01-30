@@ -1,0 +1,34 @@
+
+// To import partials for: grid, typography, navigation, images, buttons, forms
+
+// GRID --------------------------------------------- /
+
+@import 'grid';
+
+// BUTTONS ------------------------------------------ /
+
+@import 'buttons';
+
+// NAVIGATION --------------------------------------- /
+
+@import 'navigation';
+
+// IMAGES ------------------------------------------- /
+
+@import 'img';
+
+// FORMS -------------------------------------------- /
+
+@import 'forms';
+
+// TYPOGRAPHY --------------------------------------- /
+
+@import 'typography';
+
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  @include center(95%);
+}

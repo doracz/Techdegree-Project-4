@@ -1,0 +1,86 @@
+
+// PLACEHOLDERS ----------------------------------------- /
+
+// Clearfix
+
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// Center elements
+
+.centered {
+  @include mq(medium) {
+	float: none;
+	margin-left: auto;
+	margin-right: auto;
+  }
+}
+
+// Button ---------------- /
+
+%button {
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  margin: 20px auto;
+  padding: 15px 20px;
+  display: block;
+  text-transform: uppercase;
+  font-weight: $font-weight--medium;
+  @include mq(large) {
+    padding: 15px 60px;
+  }
+}
+
+%button-nav {
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+}
+
+// Links ---------------------- /
+
+.link {
+  color: $color-primary;
+  text-decoration: none;
+  font-weight: $font-weight--bold;
+}
+
+// Headlines ------------------ /
+
+%hdln--prim {
+  color: $color-primary;
+  font-weight: $font-weight--bold;
+  line-height: 0.9;
+  width: 90%;
+  margin: 10px 0 30px 0;
+  padding-left: 20px;
+  @include mq(medium) {
+    font-size: 26px;
+  }
+}
+
+%hdln--sec {
+  font-size: $base__font-size;
+  font-weight: $font-weight--light;
+  padding: 50px 0 20px 0;
+  margin: 0;
+}
+
+// Screen reader text ---------- /
+
+.srt {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}

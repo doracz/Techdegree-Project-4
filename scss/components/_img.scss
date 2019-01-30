@@ -1,0 +1,37 @@
+
+// IMAGES ------------------------------------------- /
+
+.img {
+
+  @include m(logo) {
+    display: block;
+    margin: em(20px) auto;
+    @include mq(medium) {
+      display: inline-block;
+      margin-left: 10%;
+    }
+  }
+
+	@include m(frame) {
+    display: block;
+    margin-bottom: 30px;
+    border: 1px $color-text solid;
+    padding: em(10px);
+    width: 100%;
+    @include mq(medium) {
+      margin: auto;
+      display: inline-block;
+      width: initial;
+    }
+	}
+
+	@include m(avatar) {
+    display: block;
+    margin: auto;
+  }
+
+  @include mq(medium) {
+    display: inline-block;
+  }
+
+}

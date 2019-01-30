@@ -1,0 +1,16 @@
+
+// BUTTONS ------------------------------------------ /
+
+@each $theme, $background-color in $button-themes {
+  .btn--#{$theme} {
+    background-color: $background-color;
+    @extend %button;
+    @include mq(small) {
+      width: 100%;
+    }
+    @include mq(medium) {
+      @include doubly(20px);
+      display: inline-block;
+    }
+  }
+}

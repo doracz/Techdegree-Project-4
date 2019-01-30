@@ -1,0 +1,61 @@
+
+// GLOBAL VARIABLES ------------------------------------ /
+
+// Font Stacks ---------------- /
+
+$font-url-google       : 'http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900';
+$font-stack--primary   : 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-stack--secondary : 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+// Font Weights --------------- /
+
+$font-weight--thin    : 100;
+$font-weight--light   : 300;
+$font-weight--medium  : 400;
+$font-weight--bold    : 700;
+$font-weight--bolder  : 900;
+
+// Text ----------------------- /
+
+$base__font-size : 16px;
+
+// Breakpoints ---------------- /
+
+$break-s : 1px;
+$break-m : 768px;
+$break-l : 1400px;
+
+// Layout --------------------- /
+
+$max-width : 1400px;
+$gutter    : 10px;
+
+// Colours -------------------- /
+
+$color-primary  : #58E1C1;
+$color-text     : #888888;
+
+$button-themes: (
+  'default'  : #51DDFC,
+  'success'  : #63CC82,
+  'error'    : #E4757A,
+  'warning'   : #FD7856,
+  'info'      : #927BC1,
+);
+
+$grid-themes: (
+	'12' : #80E8D1,
+  '6'  : #3FABCA,
+	'4'  : #7EE6FD,
+  '3'  : #DEB2EE,
+	'5'  : #88D9A0,
+	'7'  : #EC9FA3,
+	'8'  : #FD9F85,
+);
+
+// Grid ----------------------- /
+
+$g-col-width    : 65px;
+$g-gutter-width : 20px;
+$g-col-count    : 12;
+$g-cont-max-w   : 1400px;

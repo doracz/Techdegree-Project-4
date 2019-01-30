@@ -1,0 +1,24 @@
+
+// TYPOGRAPHY ------------------------------------------- /
+
+// Headline Extends ------------------ /
+
+.headline {
+  &--primary {
+    @extend %hdln--prim;
+  }
+
+  &--secondary {
+    @extend %hdln--sec;
+  }
+}
+
+// Blockquote ------------------------ /
+
+.blockquote {
+  font-size: em(20px);
+  border-left: solid 8px $color-primary;
+  padding-left: em(25px);
+  margin-left: em(20px);
+  font-style: italic;
+}

@@ -1,0 +1,98 @@
+
+// MIXINS ---------------------------------------------- /
+
+// Center item ------------------- /
+
+@mixin center($w) {
+  width: $w;
+  max-width: $max-width;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Flexbox ---------------------- /
+
+@mixin flexy (
+    $disp: null,
+    $wrap: null,
+    $direct: null,
+    $flex: null,
+    $justify: null,
+    $align: null,)
+    
+  {
+  display:$disp;
+  flex-wrap: $wrap;
+  flex-direction: $direct;
+  flex: $flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+// BEM selectors --------------- /
+
+@mixin e($element) {
+	&__#{$element} {
+    @content;
+  }
+}
+
+@mixin m($modifier) {
+  &--#{$modifier} {
+    @content;
+  }
+}
+
+// Adjacent sibling margins --- /
+
+@mixin doubly($margin: 1em) {
+  & + & {
+   margin-left: $margin;
+   @content;
+  }
+}
+
+// Grid Col ------------------ /
+
+@mixin grid-col {
+  border: none;
+  width: 100%;
+  margin: 20px 0;
+  padding: 15px 0;
+  display: block;
+}
+
+// Calculate grid cols ------- /
+
+@mixin g-columns {
+  @for $i from 1 through $g-col-count {
+
+    $context: g-context($g-col-width, $g-col-count, $g-gutter-width);
+    $target: ($g-col-width * $i) + ($g-gutter-width * ($i - 1));
+
+    //Generate column modifier classes
+    .grid__col--#{$i} {
+      width: percentage($target / $context);
+    }
+  }
+}
+
+// Media Queries ------------- /
+
+@mixin mq($break) {
+  @if $break == "small" {
+    @media (min-width: $break-s) and (max-width: $break-m) {
+      @content;
+    }
+  }
+  @else if $break == "medium" {
+    @media (min-width: $break-m + 1) {
+      @content;
+    }
+  }
+  @else if $break == "large" {
+    @media (min-width: $break-l) {
+      @content;
+    }
+  }
+}

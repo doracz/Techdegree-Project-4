@@ -1,0 +1,27 @@
+
+// To import: global variables, extends, mixins, and functions
+
+@import 'variables',
+        'mixins',
+        'placeholders';
+
+// EXTENDS --------------------------------------------- /
+
+
+
+// GRID --------------------------------------------- /
+
+// Set the "context" width for the grid
+
+@function g-context($g-col-width, $g-col-count, $g-gutter-width) {
+  $g-context: ($g-col-width * $g-col-count) + ($g-gutter-width * ($g-col-count - 1));
+  @return $g-context;
+}
+
+// FUNCTIONS ------------------------------------------- /
+
+// Calculate em values
+
+@function em($target, $context: $base__font-size) {
+  @return ($target / $context) * 1em;
+}

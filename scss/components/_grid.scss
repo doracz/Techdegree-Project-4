@@ -1,0 +1,126 @@
+
+// GRID CONTAINER ----------------------------------------- /
+
+.grid__row {
+	@extend %clearfix;
+	@extend .centered;
+	width: 100%;
+		p {
+		  line-height: 1.5;
+		}
+
+	@include mq(small) {
+		margin-top: em(18px);
+		margin-bottom: em(18px);
+	}
+
+	// Max-width of grid container
+	@include mq(large) {
+		max-width: $g-cont-max-w;
+		}
+}
+
+// GRID COLUMNS ----------------------------------------- /
+
+// Generates grid columns
+
+.grid__col {
+	@include mq(medium) {
+		@include g-columns;
+	}
+}
+
+// Column styles
+
+[class^="grid__col--"] {
+	@include mq(small)  {
+		margin-top: 3px;
+		margin-bottom: 3px;
+	}
+	@include mq(medium) {
+		$context: g-context($g-col-width, $g-col-count, $g-gutter-width);
+		@include doubly(percentage($g-gutter-width / $context));
+		float: left;
+		min-height: 1px;
+		margin-top: em(12px);
+		margin-bottom: em(12px);
+		&:last-of-type {
+			float: right;
+		}
+	}
+}
+
+// GRID THEME ----------------------------------------- /
+
+// Generate grid display classes
+
+@each $theme, $color in $grid-themes {
+	 .theme__colors.grid__col--#{$theme} {
+		background-color: $color;
+    border: none;
+		border-radius: 5px;
+    padding: 15px 0 15px 15px;
+    display: block;
+		text-align: left;
+		@include mq(medium) {
+			margin: 25px 8px;
+			text-align: center;
+			padding: 15px 0;
+		}
+	}
+}
+
+// CLASSES ----------------------------------------- /
+
+.grid__row {
+
+	@include flexy (flex, wrap, column);
+
+  @include mq(medium) {
+
+    @include flexy ($direct: row);
+
+		.grid__col--3 {
+			@include flexy ($flex: 1 20%);
+		}
+
+		.grid__col--4 {
+		   @include flexy ($flex: 1 20%);
+		   .img--avatar {
+		    	text-align: center;
+		  }
+		}
+
+		.grid__col--5 {
+		    @include flexy ($flex: 1);
+		  }
+
+		.grid__col--6 {
+				@include flexy ($disp: flex, $flex: 1, $justify: center, $align: center);
+			}
+
+		.grid__col--7 {
+				.centered {
+					width: 100%;
+				}
+				@include flexy ($flex: 1);
+			}
+
+		.grid__col--8 {
+				@include flexy ($flex: 1 50%);
+		    .img--avatar {
+			     text-align: center;
+		    }
+		  }
+
+	  .grid__col--9 {
+      margin-top: auto;
+      margin-bottom: auto;
+			margin-right: 5%;
+    }
+
+		.grid__col--12 {
+			@include flexy ($disp: flex, $flex: 1, $justify: space-around);
+	  }
+	}
+}

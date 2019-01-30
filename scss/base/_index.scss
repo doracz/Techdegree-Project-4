@@ -1,0 +1,16 @@
+
+// To import: normalize.css file and base styles
+
+@import 'normalize';
+
+// BASE STYLES --------------------------------------------- /
+
+* {
+	box-sizing: border-box;
+}
+
+.container {
+  color: $color-text;
+  font-size: em(18px);
+  font-family: $font-stack--primary;
+}
